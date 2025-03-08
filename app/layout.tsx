@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Crimson_Pro } from "next/font/google";
 import "./globals.css";
+// import Navbar from "@/component/Navbar";
+
+const crimsonPro = Crimson_Pro({
+  variable : "--font-crimson-pro",
+  subsets: ["latin"],
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${crimsonPro.variable} antialiased bg-[var(--primary-color)] text-[var(--secondary-color)]`}
       >
-        {children}
+        {/* <Navbar /> */}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
