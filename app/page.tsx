@@ -1,12 +1,25 @@
-import About from "@/component/homepage/About";
-import Showcase from "@/component/homepage/Showcase";
+'use client'
 
+import About from "@/component/about/About";
+import Showcase from "@/component/showcase/Showcase";
+import { useScroll } from 'framer-motion'
+import { useRef } from "react";
 
 export default function Home() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const {scrollYProgress} = useScroll({
+    target: ref,
+    offset: ['start start', 'end end']
+  })
+
   return (
-    <div className="h-screen overflow-auto scroll-smooth snap-mandatory snap-y">
-      <Showcase/>
-      <About />
+    <div 
+      ref={ref}
+      className="relative"
+    >
+      <Showcase scrollYProgress={scrollYProgress}/>
+      <About scrollYProgress={scrollYProgress}/>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #E9E5DB; /* Custom blue */
-  --secondary-color: #381B00; /* Custom red */
+  --primary-color: #E9E5DB; 
+  --secondary-color: #381B00; 
 }
 
 .font_crimson {
