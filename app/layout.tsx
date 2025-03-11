@@ -33,7 +33,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${crimsonPro.variable} antialiased  text-[var(--secondary-color)] bg-black`}
       >
-        {/* <Navbar /> */}
         <main>
           {children}
         </main>
