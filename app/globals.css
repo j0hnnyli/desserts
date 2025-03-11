@@ -12,3 +12,7 @@
 .max_width{
   max-width: 1800px;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
