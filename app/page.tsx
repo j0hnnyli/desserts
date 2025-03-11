@@ -1,25 +1,13 @@
-'use client'
+import HomePage from "@/component/HomePage";
+import { getDesserts } from "@/lib/fetchDesserts";
+import { Dessert } from "@/lib/types/dessertType";
 
-import About from "@/component/about/About";
-import Showcase from "@/component/showcase/Showcase";
-import { useScroll } from 'framer-motion'
-import { useRef } from "react";
 
-export default function Home() {
-  const ref = useRef<HTMLDivElement>(null);
+export default async function Home() {
+  const { data }: {message: string, data: Dessert[] | null} = await getDesserts()
 
-  const {scrollYProgress} = useScroll({
-    target: ref,
-    offset: ['start start', 'end end']
-  })
 
   return (
-    <div 
-      ref={ref}
-      className="relative"
-    >
-      <Showcase scrollYProgress={scrollYProgress}/>
-      <About scrollYProgress={scrollYProgress}/>
-    </div>
+    <HomePage desserts={data}/>
   );
 }

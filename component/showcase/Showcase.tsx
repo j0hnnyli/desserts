@@ -1,4 +1,5 @@
-// import AnimeSectionTransition from "../AnimateSectionTransition";
+'use client'
+        
 import ShowcaseContent from "./ShowcaseContent";
 import ShowcaseImg from "./ShowcaseImg";
 import { MotionValue, useTransform, motion, useSpring} from 'framer-motion'
@@ -9,8 +10,8 @@ type Props = {
 
 export default function Showcase({scrollYProgress} : Props){
   useSpring(scrollYProgress, { stiffness: 50, damping: 15 });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7])
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5])
+  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.7])
+  const rotate = useTransform(scrollYProgress, [0, 0.3], [0, -5])
 
   return (
     <motion.div 
