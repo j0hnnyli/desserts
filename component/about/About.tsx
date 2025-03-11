@@ -89,7 +89,6 @@ export default function About({scrollYProgress} : Props){
             </AnimateAboutText>
           </div>
         </div>
-
       </div>
     </motion.div>
   )
