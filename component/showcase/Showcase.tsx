@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+
 import ShowcaseContent from "./ShowcaseContent";
 import ShowcaseImg from "./ShowcaseImg";
 import { MotionValue, useTransform, motion, useSpring} from 'framer-motion'
