@@ -1,3 +1,5 @@
+import React from "react"; 
+
 import ScrollDownIcon from "../ScrollDownIcon";
 import AnimateText from "./AnimateText";
 

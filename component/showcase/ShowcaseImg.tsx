@@ -1,3 +1,5 @@
+import React from "react";
+
 import Image from "next/image";
 import AnimateImage from "../AnimateImage";
 
@@ -13,10 +15,10 @@ export default function ShowcaseImg(){
           className="w-full h-full object-cover"
         />
 
-        <div className="h-[120px] w-[120px] md:h-[150px] md:w-[150px] absolute -bottom-3 left-0 z-10">
+        <div className="h-[120px] w-[120px] md:h-[150px] md:w-[150px] absolute -bottom-3 left-0 z-10 ">
           <Image
             src="/rosecake.png"
-            alt='rose cake'
+            alt='rose-cake'
             width={300}
             height={300}
             className="w-full h-full object-cover"

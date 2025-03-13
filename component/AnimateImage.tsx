@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 import { twMerge } from 'tailwind-merge'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { useEffect, useRef } from 'react'
