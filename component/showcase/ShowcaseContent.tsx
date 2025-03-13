@@ -1,10 +1,13 @@
+import React from "react"; 
 import ScrollDownIcon from "../ScrollDownIcon";
 import AnimateText from "./AnimateText";
 
 
 export default function ShowcaseContent(){
   return (
-    <div className="w-full md:w-[50%] font_crimson">
+    <div 
+      className="w-full md:w-[50%] font_crimson"
+    >
       <div className="text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl">
         <AnimateText
           direction="x"
