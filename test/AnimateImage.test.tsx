@@ -16,6 +16,7 @@ vi.mock("framer-motion", async (importOriginal) => {
   }
 })
 
+
 describe("should return animte image cover", () => {
   it('should render image cover that animates its height', () => {
     render(<AnimateImage duration={1}/>)
@@ -23,3 +24,4 @@ describe("should return animte image cover", () => {
     expect(screen.getByTestId("animate-image-cover")).toBeInTheDocument()
   })
 })
+
