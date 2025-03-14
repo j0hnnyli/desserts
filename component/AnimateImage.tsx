@@ -35,6 +35,7 @@ export default function AnimateImage({className, duration } : Props){
       variants={variant}
       initial='initial'
       animate={controls}
+      data-testid="animate-image-cover"
       className={twMerge('bg-[var(--primary-color)] absolute left-0', className)}
     >
     </motion.div>

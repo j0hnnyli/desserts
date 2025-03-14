@@ -11,7 +11,7 @@ export async function getDesserts(){
     } 
   }catch(err){
     return {
-      message : err instanceof Error ?  `$Failed : ${err.message}` : 'Unkown Error', 
+      message : err instanceof Error ?  `$Error : ${err.message}` : 'Error : Unkown Error', 
       data: null,
     }
   }

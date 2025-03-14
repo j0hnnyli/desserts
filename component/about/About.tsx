@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import Image from "next/image";
 import ScrollDownIcon from "../ScrollDownIcon";
 import AnimateImage from "../AnimateImage";
@@ -36,7 +37,7 @@ export default function About({scrollYProgress} : Props){
           <div className="md:w-full hidden md:inline relative">
             <Image
               src='/weddingcake.png'
-              alt='wedding cake'
+              alt='wedding-cake'
               width={400}
               height={600}
               className="w-[70%] h-[80%] object-cover mx-auto"
@@ -56,7 +57,10 @@ export default function About({scrollYProgress} : Props){
 
             <div className="mt-5 flex items-center justify-between p-1">
               <AnimateAboutText>
-                <div className="w-full md:w-full text-sm md:text-md lg:text-[16px]">
+                <div
+                  data-testid = 'about-text'
+                 className="w-full md:w-full text-sm md:text-md lg:text-[16px]"
+                >
                   <p className="">
                     Every dessert we create is baked with love, using only the finest ingredients to ensure every bite is a moment of pure happpiness.
                   </p>
