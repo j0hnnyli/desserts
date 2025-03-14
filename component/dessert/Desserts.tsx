@@ -33,7 +33,7 @@ function DessertsContent({desserts} : {  desserts : Dessert[] | null}){
   return (
     <>
       <div 
-        className='mt-5 h-[70vh] overflow-x-auto overflow-y-hidden flex space-x-4'
+        className='mt-5 h-[50vh] md:h-[70vh] overflow-x-auto overflow-y-hidden flex space-x-4'
       >
         {desserts?.map((dessert) => (
           <div
@@ -44,7 +44,7 @@ function DessertsContent({desserts} : {  desserts : Dessert[] | null}){
               whileInView={{ opacity: 1, y: 0}}
               transition={{ duration: 0.3, ease : 'easeIn'}}
               viewport={{amount: 0.2}}
-              className='h-full w-[320px] md:w-[350px] overflow-hidden rounded-xl relative'
+              className='h-full w-[240px] md:w-[350px] overflow-hidden rounded-xl relative'
             >
               <Image
                 src={dessert.strMealThumb}
