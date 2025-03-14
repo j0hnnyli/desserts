@@ -3,14 +3,13 @@
 import React from "react";
 import ShowcaseContent from "./ShowcaseContent";
 import ShowcaseImg from "./ShowcaseImg";
-import { MotionValue, useTransform, motion, useSpring} from 'framer-motion'
+import { MotionValue, useTransform, motion} from 'framer-motion'
 
 type Props = {
   scrollYProgress : MotionValue<number>
 }
 
 export default function Showcase({scrollYProgress} : Props){
-  useSpring(scrollYProgress, { stiffness: 50, damping: 15 });
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.7])
   const rotate = useTransform(scrollYProgress, [0, 0.3], [0, -5])
 

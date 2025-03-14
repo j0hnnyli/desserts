@@ -1,7 +1,7 @@
 'use client'
 
 import { Dessert } from '@/lib/types/dessertType';
-import { MotionValue, useTransform, motion, useSpring } from 'framer-motion'
+import { MotionValue, useTransform, motion } from 'framer-motion'
 import Image from 'next/image';
 import { FaArrowRight } from "react-icons/fa";
 
@@ -11,9 +11,8 @@ type Props = {
 }
 
 export default function Desserts({ scrollYProgress, desserts } : Props){
-  useSpring(scrollYProgress, { stiffness: 50, damping: 15 });
-  const scale = useTransform(scrollYProgress, [0.7, 1], [0.7, 1])
-  const rotate = useTransform(scrollYProgress, [0.7, 1], [-5, 0])
+  const scale = useTransform(scrollYProgress, [0.9, 1], [0.7, 1])
+  const rotate = useTransform(scrollYProgress, [0.9, 1], [-5, 0])
 
   return (
     <motion.div 

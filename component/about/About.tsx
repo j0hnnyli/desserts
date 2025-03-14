@@ -5,7 +5,7 @@ import Image from "next/image";
 import ScrollDownIcon from "../ScrollDownIcon";
 import AnimateImage from "../AnimateImage";
 import AnimateAboutText from "./AnimateAboutText";
-import { MotionValue, useTransform, motion, useSpring} from 'framer-motion'
+import { MotionValue, useTransform, motion} from 'framer-motion'
 
 type Props = {
   scrollYProgress : MotionValue<number>
@@ -13,9 +13,8 @@ type Props = {
 
 
 export default function About({scrollYProgress} : Props){
-  useSpring(scrollYProgress, { stiffness: 50, damping: 15 });
-  const scale = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [0.7, 1, 0.7])
-  const rotate = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [-5, 0, 5])
+  const scale = useTransform(scrollYProgress, [0.25, 0.5, 0.9], [0.7, 1, 0.7])
+  const rotate = useTransform(scrollYProgress, [0.25, 0.5, 0.9], [-5, 0, 5])
 
 
   return (
