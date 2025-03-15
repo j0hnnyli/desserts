@@ -11,13 +11,13 @@ type Props = {
 }
 
 export default function Desserts({ scrollYProgress, desserts } : Props){
-  const scale = useTransform(scrollYProgress, [0.9, 1], [0.7, 1])
-  const rotate = useTransform(scrollYProgress, [0.9, 1], [-5, 0])
+  const scale = useTransform(scrollYProgress, [0.7, 1], [0.7, 1])
+  const rotate = useTransform(scrollYProgress, [0.7, 1], [-5, 0])
 
   return (
     <motion.div 
       style={{scale, rotate}}
-      className="h-screen flex items-center justify-center bg-[var(--primary-color)] sticky top-0 z-30 font_crimson"
+      className="h-screen flex items-center justify-center bg-[var(--primary-color)] font_crimson"
     >
       <div className='w-full md:w-[90%] max_width p-2'>
         <h2 className='text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl'>Desserts</h2>

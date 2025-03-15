@@ -16,7 +16,7 @@ export default function Showcase({scrollYProgress} : Props){
   return (
     <motion.div 
       style={{scale, rotate}}
-      className="flex items-center justify-center h-screen bg-[var(--primary-color)] sticky top-0 z-10"
+      className="flex items-center justify-center h-screen bg-[var(--primary-color)]"
     >
       <div className="flex flex-col md:flex-row items-center justify-between w-[80%] md:w-[90%] max_width p-2">
         <ShowcaseContent />
