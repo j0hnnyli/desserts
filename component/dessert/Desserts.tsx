@@ -10,6 +10,8 @@ type Props = {
   desserts : Dessert[] | null
 }
 
+const text = "Desserts"
+
 export default function Desserts({ scrollYProgress, desserts } : Props){
   const scale = useTransform(scrollYProgress, [0.7, 1], [0.7, 1])
   const rotate = useTransform(scrollYProgress, [0.7, 1], [-5, 0])
@@ -20,7 +22,20 @@ export default function Desserts({ scrollYProgress, desserts } : Props){
       className="h-screen flex items-center justify-center bg-[var(--primary-color)] font_crimson"
     >
       <div className='w-full md:w-[90%] max_width p-2'>
-        <h2 className='text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl'>Desserts</h2>
+        <h2 
+          className='text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl overflow-hidden'
+        >
+          {text.split("").map((char, i) => (
+            <motion.span 
+              key={i}
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 0.4, delay: i * 0.09 } }
+            >
+              {char}
+            </motion.span>
+          ))}
+        </h2>
         <DessertsContent desserts={desserts}/>
       </div>
     </motion.div>    
@@ -28,10 +43,12 @@ export default function Desserts({ scrollYProgress, desserts } : Props){
 }
 
 function DessertsContent({desserts} : {  desserts : Dessert[] | null}){
-
   return (
     <>
-      <div 
+      <motion.div
+        initial={{scale: .5, y: 20}}
+        whileInView={{scale: 1, y: 0}}
+        transition={{duration: 0.4, stiffness: 20}} 
         className='mt-5 h-[50vh] md:h-[70vh] overflow-x-auto overflow-y-hidden flex space-x-4'
       >
         {desserts?.map((dessert) => (
@@ -58,7 +75,7 @@ function DessertsContent({desserts} : {  desserts : Dessert[] | null}){
             </motion.div>
           </div>
         ))}
-      </div>
+      </motion.div>
       
       <div className='flex items-center justify-start mt-5'>
         <div className='flex flex-col justify-center items-center'>
