@@ -7,6 +7,7 @@ import { Dessert } from "@/lib/types/dessertType";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge"
+import { motion } from 'framer-motion'
 
 type Props = {
   desserts: Dessert[] | null;
@@ -41,7 +42,7 @@ export default function HomePage({ desserts }: Props) {
       },
       {
         root: containerRef.current, 
-        threshold: 0.6,
+        threshold: 0.5,
       }
     );
   
@@ -85,12 +86,15 @@ export default function HomePage({ desserts }: Props) {
         className="fixed top-1/2 right-5 flex flex-col items-center gap-1"
       >
         {sectionsRef.current.map((_, i) => (
-          <div 
+          <motion.div 
             key={i}
+            initial={{scale: 0}}
+            animate={{scale : 1}}
+            transition={{duration: 0.2 + (0.1 * i), ease: 'easeIn'}}
             onClick={() => handleScrollToSection(i)}
             className={twMerge("border border-[var(--secondary-color)] p-1.5 rounded-full bg-[var(--primary-color)] hover:bg-gray-300 cursor-pointer transition-all ease-in-out h-2", sectionInView === i && "h-5")}
           >
-          </div>
+          </motion.div>
         ))}
       </div>
     </>
