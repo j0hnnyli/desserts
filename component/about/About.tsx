@@ -5,7 +5,7 @@ import Image from "next/image";
 import ScrollDownIcon from "../ScrollDownIcon";
 import AnimateImage from "../AnimateImage";
 import AnimateAboutText from "./AnimateAboutText";
-import { MotionValue, useTransform, motion} from 'framer-motion'
+import { MotionValue, useTransform, motion } from 'framer-motion'
 
 type Props = {
   scrollYProgress : MotionValue<number>
@@ -16,19 +16,18 @@ export default function About({scrollYProgress} : Props){
   const scale = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0.7, 1, 0.7])
   const rotate = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [-5, 0, -5])
 
-
   return (
     <motion.div 
       style={{scale, rotate}}
       className="h-screen flex items-center justify-center bg-[var(--primary-color)]"
     >
       <div className="w-[80%] md:w-[90%] max_width p-2 flex flex-col items-center justify-center h-full mx-auto">
-        <div className="w-full md:w-[50%] font_crimson">
+        <div className="w-full font_crimson">
           <AnimateAboutText>
-            <h2 className="text-5xl md:text-6xl xl:text-7xl">We Believe</h2>
-          </AnimateAboutText>
-          <AnimateAboutText>
-            <h2 className="text-5xl md:text-6xl xl:text-7xl text-center">In The Power</h2>
+            <h2 className="text-5xl md:text-6xl xl:text-7xl">
+              <span>We Believe</span> {" "}
+              <span className='block text-right md:inline'>In The Power</span>
+            </h2>
           </AnimateAboutText>
         </div>
 
