@@ -5,7 +5,7 @@ import Image from "next/image";
 import ScrollDownIcon from "../ScrollDownIcon";
 import AnimateImage from "../AnimateImage";
 import AnimateAboutText from "./AnimateAboutText";
-import { MotionValue, useTransform, motion, useSpring} from 'framer-motion'
+import { MotionValue, useTransform, motion} from 'framer-motion'
 
 type Props = {
   scrollYProgress : MotionValue<number>

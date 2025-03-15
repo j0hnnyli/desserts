@@ -1,7 +1,7 @@
 'use client'
 
 import { Dessert } from '@/lib/types/dessertType';
-import { MotionValue, useTransform, motion, useSpring } from 'framer-motion'
+import { MotionValue, useTransform, motion } from 'framer-motion'
 import Image from 'next/image';
 import { FaArrowRight } from "react-icons/fa";
 
