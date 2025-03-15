@@ -5,7 +5,7 @@ import AnimateImage from "../AnimateImage";
 export default function ShowcaseImg(){
   return (
     <div className="w-full md:w-[50%] flex items-center justify-center relative mt-10">
-      <div className="w-[80%] h-[80%] md:h-[90%] md:w-[90%] lg:w-[60%] relative mx-auto">
+      <div className="w-[70%] h-[70%] md:h-[90%] md:w-[90%] lg:w-[60%] relative mx-auto">
         <Image
           src='/dessert.png'
           alt='dessert'
