@@ -31,6 +31,7 @@ export default function Desserts({ scrollYProgress, desserts } : Props){
               initial={{ opacity: 0}}
               whileInView={{ opacity: 1}}
               transition={{ duration: 0.4, delay: i * 0.09 } }
+              viewport={{once: true}}
             >
               {char}
             </motion.span>
@@ -49,6 +50,7 @@ function DessertsContent({desserts} : {  desserts : Dessert[] | null}){
         initial={{scale: .5, y: 20}}
         whileInView={{scale: 1, y: 0}}
         transition={{duration: 0.4, stiffness: 20}} 
+        viewport={{once: true}}
         className='mt-5 h-[50vh] md:h-[70vh] overflow-x-auto overflow-y-hidden flex space-x-4'
       >
         {desserts?.map((dessert) => (
